@@ -1,0 +1,72 @@
+@font-face {
+    font-family: Qliphort;
+    src: url(../fonts/QliphortRegular.ttf)
+  }
+@font-face {
+    font-family: saudagar;
+    src: url(../fonts/Saudagar.ttf)
+  }
+.navibar,.links{
+     display: flex;
+}
+.links{
+  margin: 1vh auto;
+  width: clamp(25%,45%,45%);
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+.navibar{
+  height: 10vh;
+  align-items: center;
+  justify-content: center;
+  width: clamp(45%,65%,70%);
+  margin: 0 auto;
+
+} 
+.navibar h1{ 
+  font-family: saudagar;
+  font-size: clamp(2rem,5vw,2.8rem);
+  letter-spacing:0.5vw;
+  color: #DC2E68;
+}
+h1 sub{ 
+  font-size: 1rem;
+  letter-spacing: 0.2vw;
+  font-size: clamp(20px,0.5rem,1.8rem);
+
+}
+.navibar a{
+  text-decoration: none;
+}
+
+.links h3{ 
+  font-family: saudagar;
+  letter-spacing:0.1vw;
+  font-size: clamp(16px,0.5rem,1.8rem);
+}
+.links a{ 
+  text-decoration:none;
+  color:#1d1d1d;
+}
+.links a:hover{
+  color: #DC2E68;
+}
+
+
+
+ @media only screen and (max-width: 900px) and (min-width: 720px){
+      .links{
+        justify-content: flex-end;
+        gap: 10px;
+      }
+}
+
+@media only screen and (max-width:720px){
+  sub{ 
+    display:none;
+  }
+  .navibar a{
+   margin: 0 auto; 
+  }
+}

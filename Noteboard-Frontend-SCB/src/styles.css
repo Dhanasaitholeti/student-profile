@@ -1,0 +1,34 @@
+  *{
+    margin:0;
+    padding: 0;
+    
+  }
+  html,body{
+    overflow-x: hidden;
+  }
+  body {
+      height: 100vh;
+      width: 100vw;
+      background-color: #EAEBE7;
+    
+  }
+  .error-logs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    margin: 10% auto;
+    color: #DC2E68;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: clamp(24px,1.2vw,3rem);
+  }
+
+::-webkit-scrollbar{
+  display: none;
+}
+@media only screen and (max-width:720px){
+  body{
+
+    background-position : 75% 75%;
+  }
+}

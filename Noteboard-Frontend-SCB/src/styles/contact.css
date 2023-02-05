@@ -1,0 +1,22 @@
+.contact-Main{
+    width: 85%;
+    height: 80vh;
+    backdrop-filter: blur(15px);
+    background: rgba(255,255,255, 0.12);
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow-y:scroll;
+}
+.contact-Main {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.contact-Main::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+.indi-card{ 
+    background: rgba(255,255,255,0.1);
+    width: 95%;
+    height: 30vh;   
+}

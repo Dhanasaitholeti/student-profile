@@ -1,0 +1,21 @@
+
+.loading-scrn{ 
+    height: 65vh;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+.img-loading{ 
+    aspect-ratio: 1/1;
+    width: 20%;
+}
+h1{ font-family: 'Courier New', Courier, monospace;}
+@media only screen and (max-width:720px){
+    .img-loading{ 
+        width: 40%;
+    }
+    .loading-scrn{
+        margin-bottom: 20%;
+    }
+}
