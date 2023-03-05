@@ -7,31 +7,39 @@ import searchlogo from "../logo/search.png";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import FilteredList from "./FilteredList";
+import { useNavigate } from "react-router-dom";
+
+
 
 
 const Allstudents = () => {
+  const isLoggedin = localStorage.getItem('isLogin');
+  const navigate = useNavigate()
+  if(!isLoggedin){
+    navigate('/')
+  }
+
+  console.log(localStorage.getItem('isLogin'))
   const [datavalue , setDatavalue] = useState("");
   const handleSearchChange = (e) =>{
     setDatavalue(e.target.value);
   }
-
-  useFetch("http://localhost:8080");
+  
+  useFetch("http://localhost:8080/Dashboard");
   
   const studata = useSelector((state)=>state.serverdata.data);
   const error = useSelector((state)=>state.serverdata.anyError);
   const isLoading = useSelector((state)=>state.serverdata.isLoading);
-  
 
+ 
   return (
     <>
-
       <div className="searchbar">
       <input type="search" placeholder="Enter the Roll number" onChange={(e) => handleSearchChange(e) } />
       <div className="search-img">
       <img src={searchlogo} alt="search-img"/>
       </div>
       </div>
-    
 
 
     {error ? (
@@ -40,11 +48,14 @@ const Allstudents = () => {
         <Loading />
         ) : (
           datavalue===""? <DisplayList studata={studata} />:<FilteredList datavalue={datavalue}/>
+        
       )} 
       
       { (studata && datavalue==="")  && <Paginate/>}
-    </>
-  );
-};
+      </>
+      );
+    }
+
+
 
 export default Allstudents;

@@ -2,6 +2,7 @@ const serverdata = "data_from_server";
 const Err = "update_err_state";
 const Loading = "update_loading_state";
 const filtereddata = "filtered_data";
+const Login = "updateLogin"
 
 export const updatedata = (ogData) => ({
     type:serverdata,
@@ -19,12 +20,17 @@ export const updatefilteredlist = (arrdata) => ({
     type:filtereddata,
     arrdata
 })
+export const updatedLoggin = (Loggindata) =>({
+    type:Login,
+    Loggindata
+})
 
 const initialstate = {
     data : undefined,
     keysdata:undefined,
     isLoading:true,
-    anyError:false
+    anyError:false,
+    Loggedin:false,
 }
 
 const mainFunction = (state = initialstate , action) => { 
@@ -40,6 +46,9 @@ const mainFunction = (state = initialstate , action) => {
         
         case filtereddata:
             return{...state,keysdata:action.arrdata}
+        
+        case Login:
+            return{...state,Loggedin:action.Loggindata}
             
         default:
             return {...state}

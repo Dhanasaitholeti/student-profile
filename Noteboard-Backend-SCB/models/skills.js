@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 
 const skillsmodel = new schema({
-    ROLLN:String,
+    ROLLNO:String,
     PROGRAMMING_LANGUAGES:[String],
     GITHUB_LINK:String,
     LINKEDIN_LINK:String

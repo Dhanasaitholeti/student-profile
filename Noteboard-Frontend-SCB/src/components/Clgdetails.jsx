@@ -25,7 +25,7 @@ const Clgdetails = () => {
         (studata) && <DisplayClgDetails studata={studata} id={id}/>
       )}
       <div className="changeButtons">
-        <button><Link to={`/`}>Home</Link></button>
+        <button><Link to={`/Dashboard`}>Home</Link></button>
         <button><Link to={`/student/skills/${id}`}>Skills</Link></button>
       </div>
     </div>

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Dateonly = require('mongoose-dateonly')(mongoose)
+const skills = require('./skills')
 const schema = mongoose.Schema;
 const clgdetials = require('./clgdetails')
 
@@ -11,13 +11,17 @@ const studentschema = new schema({
     MOBILE_NUM:Number,
     MAIL_ID:String,
     DOB:Date,
-    CLG_DETAILS:{
+    Admin:{
+        type:Boolean,
+        default:false
+    },
+    CLGDETAILS:{
         type:mongoose.Schema.Types.ObjectId,  
-        ref:"clgdetials"
+        ref:clgdetials
     },
     SKILLS:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"skills"
+        ref:skills
     }
 },
 {

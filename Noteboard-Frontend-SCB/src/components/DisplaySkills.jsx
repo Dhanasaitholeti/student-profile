@@ -22,7 +22,7 @@ const DisplaySkills = ({studata,id}) => {
             </section>
 
             <section className="stu-linkedin">
-            <legend>SCB_CATEGORY:</legend> 
+            <legend>Linkedin_Link:</legend> 
             <p>{studata[id].LINKEDIN_LINK}</p>
             </section>
                 

@@ -37,7 +37,7 @@ const DisplayIndividual = ({studata,id}) => {
             </section>
 
             <section className="stu-DOB">
-            <legend>Gender:</legend> 
+            <legend>Date-Of-Birth:</legend> 
             <p>{studata[id].DOB.slice(0,10)}</p>
             </section>
 

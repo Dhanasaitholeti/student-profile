@@ -26,7 +26,7 @@ const DSkills = () => {
         (studata) && <DisplaySkills studata={studata} id={id}/>
       )}
       <div className="changeButtons">
-        <button><Link to={`/`}>Home</Link></button>
+        <button><Link to={`/Dashboard`}>Home</Link></button>
         
       </div>
     </div>
