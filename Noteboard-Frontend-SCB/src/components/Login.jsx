@@ -20,7 +20,7 @@ const handleonchange = (e) => {
 
 const handleloginclick =  async () =>{
         try{
-            const res = await axios.post("http://localhost:8080/login",{
+            const res = await axios.post("https://studentprofilebackend.onrender.com/login",{
                 Email:logindata.email,
                 password:logindata.passwd
             })
