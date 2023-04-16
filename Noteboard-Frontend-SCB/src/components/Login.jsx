@@ -4,7 +4,7 @@ import {  useNavigate } from "react-router-dom";
 // import { updatedLoggin } from "../redux/ducks/serverData";
 import "../styles/login.css"
 import axios from "axios";
-
+import Cookies from "js-cookie";
 const Login = () => {
 
 const navigate = useNavigate();
@@ -24,16 +24,14 @@ const handleloginclick =  async () =>{
                 Email:logindata.email,
                 password:logindata.passwd
             })
-            
+            console.log(res)
             if(res.data==="No records Found"){    
-                localStorage.setItem('isLogin',false)
                 alert("Enter the correct credentials")
             }
             else{
-                localStorage.setItem('isLogin',true)
+                Cookies.set('Token',res.data.token)
                 if(res.data){
                     setLoggedin(true)
-                    console.log("he is an admin")
                     navigate('/Dashboard')
                 }
                 navigate('/dashboard')

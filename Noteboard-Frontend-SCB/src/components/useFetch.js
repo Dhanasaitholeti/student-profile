@@ -2,6 +2,8 @@ import {  useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { updatedata , updateLoad , updaterr , updatefilteredlist } from "../redux/ducks/serverData";
 import Getkeys from "./Getkeys";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 const DataFormat = (data) => {
     const  dummyobj= {}
@@ -12,15 +14,23 @@ const DataFormat = (data) => {
 }
 
 const useFetch = (url) => {
+    const token = Cookies.get("Token")
     const dispatcher = useDispatch();
 
     useEffect(()=>{
-        fetch(url)
-        .then((response)=>response.json())
+        axios.request({
+            method: 'GET',
+            url:url,
+            headers:{
+                contentType: 'application/json',
+                Authorization: `Bearer ${token}`
+            }
+        })
         .then((data)=>{
-            const formatteddata = DataFormat(data)
+            console.log(data.data);
+            const formatteddata = DataFormat(data.data)
             dispatcher(updatedata(formatteddata))
-            dispatcher(updatefilteredlist(Getkeys(data)))  
+            dispatcher(updatefilteredlist(Getkeys(data.data)))  
             dispatcher(updateLoad(false))
            
         })
