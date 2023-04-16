@@ -58,7 +58,7 @@ f
 
 
 //allstudent data route
-router.get('/Dashboard', async  (req, res) => {
+router.get('/Dashboard', protect ,  async  (req, res) => {
     try{
         const data  =  await studentmodel.find({})
         res.status(200).json(data)
