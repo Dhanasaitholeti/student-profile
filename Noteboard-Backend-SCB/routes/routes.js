@@ -21,6 +21,7 @@ router.post('/login', async (req, res)=>{
     console.log(req.body)
     try{
         const userdata = await studentmodel.findOne({ MAIL_ID:email , ROLLNO:passwd })
+        
         if(!userdata){
             res.status(401).json({ message:"No user exists"})
         }
@@ -37,7 +38,7 @@ router.post('/login', async (req, res)=>{
 })
 
 router.get('/me', protect ,async (req,res)=>{
-
+f 
     try {
         const data = await  studentmodel.findById(req.user.id)
         console.log(data)

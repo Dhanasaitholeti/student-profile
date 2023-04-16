@@ -8,12 +8,10 @@ import axios from "axios";
 const Login = () => {
 
 const navigate = useNavigate();
-const [loggin,setLoggedin] = useState(false)
 const [logindata,setLogindata] = useState({
     email:"",
     passwd:""
 })
-console.log(localStorage.getItem('isLogin'))
 const handleonchange = (e) => {
     setLogindata({...logindata,[e.target.name]:e.target.value})
 }
@@ -25,14 +23,12 @@ const handleloginclick =  async () =>{
                 password:logindata.passwd
             })
             
-            if(res.data==="No records Found"){    
-                localStorage.setItem('isLogin',false)
-                alert("Enter the correct credentials")
+            if(res.data==="No records Found"){   
+                alert("enter the correct credentials") 
             }
             else{
                 localStorage.setItem('isLogin',true)
                 if(res.data){
-                    setLoggedin(true)
                     console.log("he is an admin")
                     navigate('/Dashboard')
                 }

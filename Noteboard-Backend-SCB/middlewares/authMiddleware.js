@@ -3,7 +3,6 @@ const studentmodel = require('../models/student')
 
 
 const protect = async (req,res,next) => {
-    console.log("This is in middleware") 
     let token
      if(req.headers.authorization && req.headers.authorization.startsWith('Bearer')
      ){
@@ -15,16 +14,13 @@ const protect = async (req,res,next) => {
             const decoded = jwt.verify(token,"Thisisasecret")
             
             //get the user from the token
-            req.user = await studentmodel.findById(decoded.id)      
-        
+            req.user = await studentmodel.findById(decoded.id)  
             next()
             
         } catch (error) {
             res.json({ 
                 message:"you are not authorised"
             })
-            // throw new Error(error) \
-
         }
      }
      else{
@@ -34,4 +30,4 @@ const protect = async (req,res,next) => {
 }
 
 
-module.exports = protect;
+module.exports = protect; 
