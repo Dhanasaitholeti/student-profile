@@ -8,7 +8,7 @@ import useFetch from "./useFetch";
 
 const DSkills = () => {
     const {id} = useParams();
-    const url = 'http://localhost:8080/student/skills/'+id;
+    const url = 'https://studentprofilebackend.onrender.com/student/skills/'+id;
 
     useFetch(url);
 

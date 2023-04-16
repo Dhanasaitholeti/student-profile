@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 const IndividualStudent = () => {
   const { id } = useParams();
-  const url ="http://localhost:8080/student/" + id;
+  const url ="https://studentprofilebackend.onrender.com/student/" + id;
   
   useFetch(url);
 

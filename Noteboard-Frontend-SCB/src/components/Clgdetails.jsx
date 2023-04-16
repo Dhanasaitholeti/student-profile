@@ -7,7 +7,7 @@ import useFetch from "./useFetch";
 
 const Clgdetails = () => {
     const {id} = useParams();
-    const url = 'http://localhost:8080/student/clgdetails/'+id;
+    const url = 'https://studentprofilebackend.onrender.com/student/clgdetails/'+id;
 
     useFetch(url);
 

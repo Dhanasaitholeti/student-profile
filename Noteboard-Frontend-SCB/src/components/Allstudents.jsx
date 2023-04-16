@@ -25,7 +25,7 @@ const Allstudents = () => {
     setDatavalue(e.target.value);
   }
   
-  useFetch("http://localhost:8080/Dashboard");
+  useFetch("https://studentprofilebackend.onrender.com/Dashboard");
   
   const studata = useSelector((state)=>state.serverdata.data);
   const error = useSelector((state)=>state.serverdata.anyError);
