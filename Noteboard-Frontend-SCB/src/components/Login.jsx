@@ -24,11 +24,13 @@ const handleloginclick =  async () =>{
                 Email:logindata.email,
                 password:logindata.passwd
             })
-            console.log(res)
+            
             if(res.data==="No records Found"){    
                 alert("Enter the correct credentials")
+                localStorage.setItem('isLogin',false)
             }
             else{
+                localStorage.setItem('isLogin',true)
                 Cookies.set('Token',res.data.token)
                 if(res.data){
                     setLoggedin(true)
